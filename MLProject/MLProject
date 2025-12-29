@@ -1,0 +1,17 @@
+name: ecommerce_churn_retrain
+
+entry_points:
+  main:
+    parameters:
+      preproc_dir: {type: string}
+      out_dir: {type: string, default: outputs}
+      seed: {type: int, default: 42}
+      C: {type: float, default: 3.0}
+      max_iter: {type: int, default: 1000}
+    command: >
+      python modelling.py
+      --preproc_dir {preproc_dir}
+      --out_dir {out_dir}
+      --seed {seed}
+      --C {C}
+      --max_iter {max_iter}
